@@ -1,0 +1,225 @@
+*,::after,::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-container{
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  animation: backgroundColorChange 10s linear infinite; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: "Poppins", serif;
+  /* margin-bottom: 1rem; */
+}
+
+.nav-items{
+  min-width: 50%;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: #333 solid 1px;
+}
+
+.nav-links{
+  list-style:decimal-leading-zero;
+}
+
+
+.nav-item {
+  text-decoration: none; 
+  color: #333; 
+  font-size: 1rem; 
+  transition: font-size 0.3s ease, color 0.3s ease; 
+
+}
+
+
+.nav-item:hover {
+  font-size: 18px; /* Increase font size on hover */
+  color: #ebebeb; /* Optional: Change text color on hover */
+}
+
+
+.active-link {
+  font-size: 18px;
+  font-weight: bold; 
+  color: #f2fef8; 
+}
+
+.logo{
+  max-width: 6vw;
+  max-height: 6vh;
+
+}
+
+
+@keyframes backgroundColorChange {
+  0% {
+    background-color: #ff9a9e; /* Starting color */
+  }
+  25% {
+    background-color: #fad0c4; /* Intermediate color */
+  }
+  50% {
+    background-color: #fbc2eb; /* Intermediate color */
+  }
+  75% {
+    background-color: #a18cd1; /* Intermediate color */
+  }
+  100% {
+    background-color: #ff9a9e; /* Ending color */
+  }
+}
+
+.reviews-nav{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  max-width: 72%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.reviews-title{
+  font-family: "Poppins", serif;
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: #333;
+  font-style: light;
+  margin-bottom: .1rem;
+  font-weight: 200;
+  border-bottom: #333 solid 1px;
+}
+
+body{
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-y: hidden;
+}
+
+.cluster{
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: #333 solid 1px;
+  padding-bottom: 1rem;
+}
+
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  animation: backgroundColorChange 10s linear infinite; 
+}
+
+.button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.button:active {
+  transform: scale(0.9);
+  color: #fff;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #333;
+}
+
+.button--primary {
+  background-color: #333;
+  color: #52f2b5;
+}
+
+.button--secondary {
+  background-color: #fff;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.button--small {
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.button--large {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 90vh;
+}
+
+.reviews-nav {
+  margin-bottom: 1rem;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.review-container {
+  top: 20vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-y: auto;
+  max-height: 65vh; /* Adjust height as needed */
+  padding: 1rem;
+  border: 1px solid #ddd; /* Optional for visual distinction */
+  border-radius: 8px;
+}
+
+.review-card {
+  flex: 1 1 calc(33.333% - 1rem); /* 3 cards per row */
+  box-sizing: border-box;
+  background: #201f1f;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  color: aliceblue;
+  max-width: 22vw;
+  
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    flex: 1 1 calc(40% - 1rem); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    flex: 1 1 100%; /* 1 card per row on mobile */
+  }
+}
