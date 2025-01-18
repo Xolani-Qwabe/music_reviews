@@ -2,20 +2,26 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import logo from './assets/logoNoText.png';
+import { Divider } from '@mui/material';
+
+import DrawerComponent from './components/DrawerComponent';
 
 function Layout() {
   return (
     <div >
       <Navigation logo={logo} />
+      <DrawerComponent/>
+    
       <main style={{ 
-        top:'10vh',
+        top:'8vh',
         padding: '20px',
         position: 'relative',
-        border: '1px solid #ccc',
+        // borderLeft: '1px solid black',
+        // borderRight: '1px solid black',
         maxWidth: '75%',
-        maxHeight: '100vh',
+        minHeight: '100vh',
         margin: '0 auto',
-        overflow: 'none',
+        // overflow: 'none',
         }}>
         <Outlet />
       </main>
