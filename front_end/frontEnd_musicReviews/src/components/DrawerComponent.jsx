@@ -83,8 +83,7 @@ function DrawerComponent() {
           display: { xs: 'block', sm: 'none' },
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
-            width: drawerWidth,
-            top: '10vh',
+            width: drawerWidth, 
             backgroundColor: 'rgb(226, 220, 215)',
           },
         }}

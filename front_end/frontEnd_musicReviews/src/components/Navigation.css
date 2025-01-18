@@ -7,7 +7,7 @@
   .nav-container{
     display: flex;
     width: 100vw;
-    height: 8vh;
+    height: 16vh;
     justify-content: space-between;
     align-items: center;
     /* padding: 1 2rem; */
@@ -61,6 +61,7 @@
   .logo{
     max-width: 6vw;
     max-height: 6vh;
+    margin-right: 4vw;
   
   }
   .logo-container{
@@ -70,19 +71,23 @@
   }
 
 
-  .login{
-      font-weight: 700;
-      text-decoration: none; 
-      color: #212020; 
-      font-size: 1.2rem; 
-      transition: font-size 0.3s ease, color 0.3s ease; 
-    
-    
+  .login {
+    font-weight: 700;
+    text-decoration: none;
+    color: #212020;
+    font-size: 1.2em;
+    transition: font-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* or display: block; */
   }
-
+  
+  .login:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
+  }
+  
 .sub{
   display: flex;
-  height: 8vh;
+  height: 16vh;
   width: 20%;
   /* border: solid black 1px; */
   justify-content: space-evenly;

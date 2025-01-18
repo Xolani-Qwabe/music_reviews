@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import Review from "./Review"; // Ensure correct path
 import "../App.css";
 import { reviewData } from "../mockedData/reviews";
@@ -8,7 +8,9 @@ import {
   Breadcrumbs,
   Chip,
   Typography,
-  Divider
+  Divider,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import { Home } from "@mui/icons-material";
 
@@ -42,23 +44,24 @@ const genres = {
 
 const style = {
   py: 0,
-  width: '100%',
+  width: "100%",
   maxWidth: 360,
   borderRadius: 2,
-  border: '1px solid',
-  borderColor: 'divider',
-  backgroundColor: 'background.paper',
+  border: "1px solid",
+  borderColor: "divider",
+  backgroundColor: "background.paper",
 };
 
-
 function Reviews() {
-  const [selectedGenre, setSelectedGenre] = useState("All");
+  const [selectedGenre, setSelectedGenre] = useState("All Genres");
   const [filteredReviews, setFilteredReviews] = useState(reviewData);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleGenreChange = (genre) => {
     setSelectedGenre(genre);
-    if (genre === "All") {
-      setFilteredReviews(reviewData);
+    if (genre === "All Genres") {
+      setFilteredReviews(reviewData); // Show all reviews if "All Genres" is selected
     } else {
       setFilteredReviews(reviewData.filter((review) => review.genre === genre));
     }
@@ -85,29 +88,77 @@ function Reviews() {
     };
   });
 
+  const allGenres = [{ id: 0, name: "All Genres" }, ...Object.values(genres).flat()];
+
+  const visibleItems = isExpanded || allGenres.length <= 4
+    ? allGenres
+    : [allGenres[0], "...", allGenres[allGenres.length - 1]];
+
+  const handleExpandClick = (event) => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div className="reviews">
       <div className="reviews-nav">
-        <Breadcrumbs sx={{mt:0}} aria-label="breadcrumb">
-          <StyledBreadcrumb
-            component="a"
-            href="#"
-            label="All Genres"
-            icon={<Home fontSize="small" color="white" />}
-            onClick={() => handleGenreChange("All")}
-          />
-       
-          {Object.values(genres).flat().map((genre) => (
-            <StyledBreadcrumb
-              key={genre.id}
-              component="a"
-              href="#"
-              label={genre.name}
-              onClick={() => handleGenreChange(genre.name)}
-            />
-          ))}
+        <Breadcrumbs sx={{ mt: 0 }} aria-label="breadcrumb">
+          {visibleItems.map((genre, index) => {
+            // Handle the collapsed "..." as a dropdown
+            if (genre === "...") {
+              return (
+                <StyledBreadcrumb
+                  key={index}
+                  component="span"
+                  label="..."
+                  onClick={handleMenuClick}
+                />
+              );
+            }
+
+            const isLast = index === visibleItems.length - 1;
+            return (
+              <StyledBreadcrumb
+                key={genre.id}
+                component="a"
+                href="#"
+                label={genre.name}
+                onClick={() => handleGenreChange(genre.name)}
+                sx={{ color: 'white'}}
+              />
+            );
+          })}
         </Breadcrumbs>
-        <Divider sx={{mt:2,border:"1px black solid", width:"100"}}/>
+
+        {/* Dropdown Menu for Collapsed Genres */}
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+        >
+          {allGenres.slice(1, allGenres.length - 1).map((genre) => (
+            <MenuItem
+              key={genre.id}
+              onClick={() => {
+                handleGenreChange(genre.name);
+                handleMenuClose();
+              }}
+            >
+              {genre.name}
+            </MenuItem>
+          ))}
+        </Menu>
+
+        <Divider
+          sx={{ mt: 2, border: "1px black solid", width: "100%" }}
+        />
       </div>
 
       <div className="review-container">
@@ -116,7 +167,11 @@ function Reviews() {
             <Review key={review.id} reviewData={review} />
           ))
         ) : (
-          <Typography color="white" variant="body1" sx={{ textAlign: "center" }}>
+          <Typography
+            color="white"
+            variant="body1"
+            sx={{ textAlign: "center" }}
+          >
             No reviews available for the selected genre.
           </Typography>
         )}

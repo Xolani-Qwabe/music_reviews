@@ -2,6 +2,23 @@ import image1 from '../assets/music/uza.jpg'
 import image2 from '../assets/music/yuza.jpg'
 import image3 from '../assets/music/hands.png'
 import image4 from '../assets/music/zova.jpg'
+import image5 from '../assets/music/hands.png'
+import image6 from '../assets/music/image6.jpg'
+import image7 from '../assets/music/image7.jpg'
+import image8 from '../assets/music/image8.jpg'
+import image9 from '../assets/music/image9.jpg'
+import image10 from '../assets/music/image10.jpg'
+import image11 from '../assets/music/image11.jpg'
+import image12 from '../assets/music/image12.jpg'
+import image13 from '../assets/music/image13.jpg'
+import image14 from '../assets/music/image14.jpg'
+import image15 from '../assets/music/gazo.jpg'
+import image16 from '../assets/music/image16.jpg'
+import image17 from '../assets/music/image17.jpg'
+import image18 from '../assets/music/image18.jpg'
+import image19 from '../assets/music/eric.jpg'
+import image20 from '../assets/music/clay-banks.jpg'
+
 
 export const reviewData = [
     {
@@ -105,7 +122,7 @@ export const reviewData = [
       songReview: "This Afro-Pop track is an infectious dancefloor filler.",
       rating: 4.9,
       genre: "Afro-Pop",
-      image: image1,
+      image: image15,
       streamingStats: {
         platformEngagement: { Spotify: 100000, AppleMusic: 50000, YouTubeMusic: 200000 },
         artistStreamingStats: { monthlyListeners: 500000, totalStreams: 25000000 },
@@ -128,7 +145,7 @@ export const reviewData = [
       songReview: "This Hip-Hop track is a powerful exploration of identity, culture, and social justice.",
       rating: 4.8,
       genre: "Hip-Hop/Rap",
-      image: image2,
+      image: image6,
       streamingStats: {
         platformEngagement: { Spotify: 80000, AppleMusic: 40000, YouTubeMusic: 150000 },
         artistStreamingStats: { monthlyListeners: 400000, totalStreams: 20000000 },
@@ -151,7 +168,7 @@ export const reviewData = [
       songReview: "This indie-rock track is a fun, upbeat ode to the beauty of Pretoria's women.",
       rating: 4.7,
       genre: "Indie-Rock",
-      image: image3,
+      image: image7,
       streamingStats: {
         platformEngagement: { Spotify: 60000, AppleMusic: 30000, YouTubeMusic: 100000 },
         artistStreamingStats: { monthlyListeners: 300000, totalStreams: 15000000 },
@@ -174,7 +191,7 @@ export const reviewData = [
       songReview: "This soulful Afro-Pop track showcases Samthing's impressive vocal range.",
       rating: 4.9,
       genre: "Afro-Pop",
-      image: image4,
+      image: image8,
       streamingStats: {
         platformEngagement: { Spotify: 120000, AppleMusic: 60000, YouTubeMusic: 250000 },
         artistStreamingStats: { monthlyListeners: 600000, totalStreams: 30000000 },
@@ -197,7 +214,7 @@ export const reviewData = [
       songReview: "This feel-good electronic track features Sun-El's signature blend of Afro-Pop and deep house.",
       rating: 4.8,
       genre: "Electronic/Afro-Pop",
-      image: image1,
+      image: image9,
       streamingStats: {
         platformEngagement: { Spotify: 90000, AppleMusic: 45000, YouTubeMusic: 180000 },
         artistStreamingStats: { monthlyListeners: 450000, totalStreams: 22500000 },
@@ -220,7 +237,7 @@ export const reviewData = [
       songReview: "This soulful R&B track showcases Mthunzi's impressive vocal range.",
       rating: 4.9,
       genre: "R&B/Afro-Pop",
-      image: image2,
+      image: image10,
       streamingStats: {
         platformEngagement: { Spotify: 100000, AppleMusic: 50000, YouTubeMusic: 200000 },
         artistStreamingStats: { monthlyListeners: 500000, totalStreams: 25000000 },
@@ -243,7 +260,7 @@ export const reviewData = [
       songReview: "This Hip-Hop track showcases Zakwe's impressive storytelling ability.",
       rating: 4.8,
       genre: "Hip-Hop/Rap",
-      image: image3,
+      image: image11,
       streamingStats: {
         platformEngagement: { Spotify: 80000, AppleMusic: 40000, YouTubeMusic: 150000 },
         artistStreamingStats: { monthlyListeners: 400000, totalStreams: 20000000 },
@@ -266,7 +283,7 @@ export const reviewData = [
       songReview: "This Hip-Hop track showcases Nasty C's impressive lyrical ability.",
       rating: 4.9,
       genre: "Hip-Hop/Rap",
-      image: image4,
+      image: image12,
       streamingStats: {
         platformEngagement: { Spotify: 120000, AppleMusic: 60000, YouTubeMusic: 250000 },
         artistStreamingStats: { monthlyListeners: 600000, totalStreams: 30000000 },
@@ -289,7 +306,7 @@ export const reviewData = [
       songReview: "This Afro-Pop track showcases Lady Zamar's impressive vocal range.",
       rating: 4.8,
       genre: "Afro-Pop",
-      image: image3,
+      image: image13,
       streamingStats: {
         platformEngagement: { Spotify: 90000, AppleMusic: 45000, YouTubeMusic: 180000 },
         artistStreamingStats: { monthlyListeners: 450000, totalStreams: 22500000 },
@@ -312,7 +329,7 @@ export const reviewData = [
       songReview: "This electronic track showcases Black Motion's impressive production skills.",
       rating: 4.9,
       genre: "Electronic/Afro-Pop",
-      image: image4,
+      image: image14,
       streamingStats: {
         platformEngagement: { Spotify: 100000, AppleMusic: 50000, YouTubeMusic: 200000 },
         artistStreamingStats: { monthlyListeners: 500000, totalStreams: 25000000 },
@@ -334,7 +351,7 @@ export const reviewData = [
       songReview: "This House track showcases Prince Kaybee's impressive production skills",
       rating: 4.8,
       genre: "House",
-      image: image1,
+      image: image15,
       streamingStats: {
         platformEngagement: { Spotify: 80000, AppleMusic: 40000, YouTubeMusic: 150000 },
         artistStreamingStats: { monthlyListeners: 400000, totalStreams: 20000000 },
@@ -356,7 +373,7 @@ export const reviewData = [
       songReview: "This Hip-Hop track showcases Sho Madjozi's impressive lyrical ability.",
       rating: 4.9,
       genre: "Hip-Hop/Afro-Pop",
-      image: image2,
+      image: image16,
       streamingStats: {
         platformEngagement: { Spotify: 100000, AppleMusic: 50000, YouTubeMusic: 200000 },
         artistStreamingStats: { monthlyListeners: 500000, totalStreams: 25000000 },
@@ -379,7 +396,7 @@ export const reviewData = [
       songReview: "This Afro-Pop track showcases Mafikizolo's signature sound and style.",
       rating: 4.8,
       genre: "Afro-Pop",
-      image: image3,
+      image: image17,
       streamingStats: {
         platformEngagement: { Spotify: 70000, AppleMusic: 35000, YouTubeMusic: 140000 },
         artistStreamingStats: { monthlyListeners: 350000, totalStreams: 17500000 },
@@ -402,7 +419,7 @@ export const reviewData = [
       songReview: "This Afro-Pop track showcases Simmy's impressive vocal range.",
       rating: 4.9,
       genre: "Afro-Pop",
-      image: image2,
+      image: image18,
       streamingStats: {
         platformEngagement: { Spotify: 90000, AppleMusic: 45000, YouTubeMusic: 180000 },
         artistStreamingStats: { monthlyListeners: 450000, totalStreams: 22500000 },
@@ -425,7 +442,7 @@ export const reviewData = [
       songReview: "This Afro-Pop track showcases Ami Faku's impressive vocal range.",
       rating: 4.8,
       genre: "Afro-Pop",
-      image: image3,
+      image: image19,
       streamingStats: {
         platformEngagement: { Spotify: 80000, AppleMusic: 40000, YouTubeMusic: 150000 },
         artistStreamingStats: { monthlyListeners: 400000, totalStreams: 20000000 },
@@ -448,7 +465,7 @@ export const reviewData = [
       songReview: "This Amapiano track showcases De Mthuda's impressive production skills",
       rating: 4.9,
       genre: "Amapiano",
-      image: image4,
+      image: image20,
       streamingStats: {
         platformEngagement: { Spotify: 100000, AppleMusic: 50000, YouTubeMusic: 200000 },
         artistStreamingStats: { monthlyListeners: 500000, totalStreams: 25000000 },
