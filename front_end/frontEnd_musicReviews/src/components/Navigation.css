@@ -7,11 +7,12 @@
   .nav-container{
     display: flex;
     width: 100vw;
-    height: 16vh;
+    height: 12vh;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(5, 30, 52);
     /* padding: 1 2rem; */
-    animation: backgroundColorChange 10s linear infinite; 
+    /* animation: backgroundColorChange 10s linear infinite;  */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
     position: fixed;
     width: 100%;
@@ -19,6 +20,7 @@
     z-index: 1000;
     font-family: "Poppins", serif;
     /* margin-bottom: 1rem; */
+    color: #ebebeb;
   }
   
   .nav-items{
@@ -59,8 +61,8 @@
   }
   
   .logo{
-    max-width: 6vw;
-    max-height: 6vh;
+    max-width: 8vw;
+    max-height: 8vh;
     margin-right: 4vw;
   
   }
@@ -74,7 +76,7 @@
   .login {
     font-weight: 700;
     text-decoration: none;
-    color: #212020;
+    color: rgb(157, 241, 232);
     font-size: 1.2em;
     transition: font-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
     display: inline-block; /* or display: block; */
@@ -82,12 +84,12 @@
   
   .login:hover {
     transform: scale(1.1);
-    color: rgb(255, 255, 255);
+    color: rgb(123, 131, 251);
   }
   
 .sub{
   display: flex;
-  height: 16vh;
+  height: 12vh;
   width: 20%;
   /* border: solid black 1px; */
   justify-content: space-evenly;

@@ -5,6 +5,7 @@ import logo from './assets/logoNoText.png';
 import { Divider } from '@mui/material';
 
 import DrawerComponent from './components/DrawerComponent';
+import RightDrawer from './components/RightDrawer';
 
 function Layout() {
   return (
@@ -25,6 +26,7 @@ function Layout() {
         }}>
         <Outlet />
       </main>
+      <RightDrawer/>
     </div>
   );
 }

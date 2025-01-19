@@ -7,7 +7,7 @@
   }
   
   .reviews-nav {
-    top:23vh;
+    top:14vh;
     margin-bottom: 1rem;
     position: fixed;
     width: 70vw;
@@ -24,7 +24,8 @@
   }
   
   .review-container {
-    top: 32vh;
+    top: 18vh;
+    padding: 1vw;
     position: relative;
     display: flex;
     flex-wrap: wrap;

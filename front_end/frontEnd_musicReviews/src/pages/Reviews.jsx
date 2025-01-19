@@ -68,10 +68,9 @@ function Reviews() {
   };
 
   const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-    const backgroundColor =
-      theme.palette.mode === "dark"
-        ? theme.palette.grey[700]
-        : theme.palette.grey[900];
+    const backgroundColor = 'rgb(5, 30, 52)';
+  
+     
     return {
       backgroundColor,
       height: theme.spacing(3),
@@ -131,7 +130,7 @@ function Reviews() {
                 href="#"
                 label={genre.name}
                 onClick={() => handleGenreChange(genre.name)}
-                sx={{ color: 'white'}}
+                sx={{ color: 'rgb(157, 241, 232)'}}
               />
             );
           })}
@@ -168,7 +167,7 @@ function Reviews() {
           ))
         ) : (
           <Typography
-            color="white"
+            color="rgb(157, 241, 232)"
             variant="body1"
             sx={{ textAlign: "center" }}
           >

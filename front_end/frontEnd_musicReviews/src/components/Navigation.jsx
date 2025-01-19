@@ -122,7 +122,7 @@ function Navigation({ logo }) {
 
       <Search sx={{}}>
             <SearchIconWrapper sx={{alignSelf:'center'}}>
-              <SearchRounded sx={{alignSelf:'center'}} />
+              <SearchRounded sx={{alignSelf:'center' , color:'rgb(157, 241, 232)'}} />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
@@ -138,7 +138,7 @@ function Navigation({ logo }) {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <DehazeRounded />
+        <DehazeRounded sx={{color:'rgb(157, 241, 232)'}}/>
       </IconButton>
       <Menu
         id="basic-menu"
@@ -156,10 +156,6 @@ function Navigation({ logo }) {
               onClick={handleClose}
               component={NavLink}
               to={path}
-              // sx={{color:"white", backgroundColor:"black"}}
-              // className={({ isActive }) =>
-              //   isActive ? 'active-menu-item' : ''
-              // }
             >
               <ListItemIcon >{icon}</ListItemIcon>
               <ListItemText>{label}</ListItemText>
