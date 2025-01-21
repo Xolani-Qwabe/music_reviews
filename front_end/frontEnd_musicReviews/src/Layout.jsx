@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import logo from './assets/logoNoText.png';
-import { Divider } from '@mui/material';
+
 
 import DrawerComponent from './components/DrawerComponent';
 import RightDrawer from './components/RightDrawer';
@@ -11,7 +11,7 @@ function Layout() {
   return (
     <div >
       <Navigation logo={logo} />
-      <DrawerComponent/>
+      <DrawerComponent style={{}}/>
     
       <main style={{ 
         top:'8vh',
@@ -19,10 +19,11 @@ function Layout() {
         position: 'relative',
         // borderLeft: '1px solid black',
         // borderRight: '1px solid black',
-        maxWidth: '75%',
         minHeight: '100vh',
         margin: '0 auto',
-        // overflow: 'none',
+      
+        // overflow: 'none'
+        width:'60vw'
         }}>
         <Outlet />
       </main>

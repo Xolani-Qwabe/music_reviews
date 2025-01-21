@@ -12,18 +12,15 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import ArrowRight from '@mui/icons-material/ArrowRight';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import Home from '@mui/icons-material/Home';
-import Settings from '@mui/icons-material/Settings';
-import People from '@mui/icons-material/People';
-import PermMedia from '@mui/icons-material/PermMedia';
-import Dns from '@mui/icons-material/Dns';
-import Public from '@mui/icons-material/Public';
+import AccountCircleRounded from '@mui/icons-material/AccountCircleRounded';
+import { MessageRounded, FactCheckRounded, StorageRounded, CardMembershipRounded } from '@mui/icons-material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const data = [
-  { icon: <People />, label: 'Authentication' },
-  { icon: <Dns />, label: 'Database' },
-  { icon: <PermMedia />, label: 'Storage' },
-  { icon: <Public />, label: 'Hosting' },
+  { icon: <FactCheckRounded />, label: 'Verification' },
+  { icon: <CardMembershipRounded />, label: 'Credentials' },
+  { icon: <StorageRounded />, label: 'Storage' },
+  { icon: <MessageRounded />, label: 'Messages' },
 ];
 
 const FireNav = styled(List)({
@@ -42,16 +39,22 @@ const FireNav = styled(List)({
 
 export default function RightDrawer() {
   const [open, setOpen] = React.useState(true);
+
+  // Detect if the screen width is less than or equal to 960px
+  const isMobile = useMediaQuery('(max-width:960px)');
+
   return (
-    <Box  sx={{ 
-        display: 'flex' ,
-        position:'fixed',
-        right:'0',
-        top:'12vh',
-        width: '12.5vw',
-        height:'100%'
-        }}>
-        
+    <Box
+      sx={{
+        display: 'flex',
+        position: 'fixed',
+        right: '0',
+        top: '12vh',
+        width: isMobile ? '58px' : '15vw',
+        height: '100%',
+        transition: 'width 0.3s ease',
+      }}
+    >
       <ThemeProvider
         theme={createTheme({
           components: {
@@ -68,153 +71,78 @@ export default function RightDrawer() {
           },
         })}
       >
-        <Paper elevation={0} sx={{ maxWidth: 256 }}>
+        <Paper elevation={0} sx={{ maxWidth: 256, width: '100%' }}>
           <FireNav component="nav" disablePadding>
             <ListItemButton component="a" href="#customized-list">
-              <ListItemIcon sx={{ fontSize: 20 }}>🔥</ListItemIcon>
-              <ListItemText
-                sx={{ my: 0 }}
-                primary="Wallet"
-                primaryTypographyProps={{
-                  fontSize: 20,
-                  fontWeight: 'medium',
-                  letterSpacing: 0,
-                }}
-              />
+              <ListItemIcon sx={{ fontSize: 20 }}></ListItemIcon>
+              {!isMobile && (
+                <ListItemText
+                  sx={{ my: 0, color: 'rgb(157, 241, 232)' }}
+                  primary="Wallet"
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 'medium',
+                    letterSpacing: 0,
+                  }}
+                />
+              )}
             </ListItemButton>
             <Divider />
             <ListItem component="div" disablePadding>
               <ListItemButton sx={{ height: 56 }}>
                 <ListItemIcon>
-                  <Home color="primary" />
+                  <AccountCircleRounded color="primary" />
                 </ListItemIcon>
-                <ListItemText
-                  primary="Project Overview"
-                  primaryTypographyProps={{
-                    color: 'primary',
-                    fontWeight: 'medium',
-                    variant: 'body2',
-                  }}
-                />
+                {!isMobile && (
+                  <ListItemText
+                    primary="User Profile"
+                    sx={{
+                      color: 'rgb(157, 241, 232)',
+                      fontWeight: 'medium',
+                      variant: 'body2',
+                    }}
+                  />
+                )}
               </ListItemButton>
-              <Tooltip title="Project Settings">
-                <IconButton
-                  size="large"
-                  sx={{
-                    '& svg': {
-                      color: ' rgb(157, 241, 232)',
-                      transition: '0.2s',
-                      transform: 'translateX(0) rotate(0)',
-                    },
-                    '&:hover, &:focus': {
-                      bgcolor: 'unset',
-                      '& svg:first-of-type': {
-                        transform: 'translateX(-4px) rotate(-20deg)',
-                      },
-                      '& svg:last-of-type': {
-                        right: 0,
-                        opacity: 1,
-                      },
-                    },
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      height: '80%',
-                      display: 'block',
-                      left: 0,
-                      width: '1px',
-                      bgcolor: 'divider',
-                    },
-                  }}
-                >
-                  <Settings />
-                  <ArrowRight sx={{ position: 'absolute', right: 4, opacity: 0 }} />
-                </IconButton>
-              </Tooltip>
             </ListItem>
             <Divider />
-            <Box
-              sx={[
-                open
-                  ? {
-                      bgcolor: 'rgba(71, 98, 130, 0.2)',
-                    }
-                  : {
-                      bgcolor: null,
-                    },
-                open
-                  ? {
-                      pb: 2,
-                    }
-                  : {
-                      pb: 0,
-                    },
-              ]}
-            >
+            <Box>
               <ListItemButton
                 alignItems="flex-start"
                 onClick={() => setOpen(!open)}
-                sx={[
-                  {
-                    px: 3,
-                    pt: 2.5,
-                  },
-                  open
-                    ? {
-                        pb: 0,
-                      }
-                    : {
-                        pb: 2.5,
-                      },
-                  open
-                    ? {
-                        '&:hover, &:focus': {
-                          '& svg': {
-                            opacity: 1,
-                          },
-                        },
-                      }
-                    : {
-                        '&:hover, &:focus': {
-                          '& svg': {
-                            opacity: 0,
-                          },
-                        },
-                      },
-                ]}
+                sx={{
+                  px: 3,
+                  pt: 2.5,
+                  pb: open ? 0 : 2.5,
+                }}
               >
                 <ListItemText
-                  primary="Build"
-                  primaryTypographyProps={{
+                  primary={!isMobile && 'User Wallet'}
+                  sx={{
                     fontSize: 15,
                     fontWeight: 'medium',
                     lineHeight: '20px',
                     mb: '2px',
+                    color: 'rgb(157, 241, 232)',
                   }}
-                  secondary="Authentication, Firestore Database, Realtime Database, Storage, Hosting, Functions, and Machine Learning"
+                  secondary={
+                    !isMobile &&
+                    'Verification, Credentials, Messages, Storage'
+                  }
                   secondaryTypographyProps={{
                     noWrap: true,
                     fontSize: 12,
                     lineHeight: '16px',
                     color: open ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,0.5)',
                   }}
-                  sx={{ my: 0 }}
                 />
                 <KeyboardArrowDown
-                  sx={[
-                    {
-                      mr: -1,
-                      opacity: 0,
-                      transition: '0.2s',
-                    },
-                    open
-                      ? {
-                          transform: 'rotate(-180deg)',
-                        }
-                      : {
-                          transform: 'rotate(0)',
-                        },
-                  ]}
+                  sx={{
+                    mr: 1,
+                    opacity: !isMobile && open ? 1 : 0,
+                    transition: '0.2s',
+                    transform: open ? 'rotate(-180deg)' : 'rotate(0)',
+                  }}
                 />
               </ListItemButton>
               {open &&
@@ -226,10 +154,15 @@ export default function RightDrawer() {
                     <ListItemIcon sx={{ color: 'inherit' }}>
                       {item.icon}
                     </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{ fontSize: 14, fontWeight: 'medium' }}
-                    />
+                    {!isMobile && (
+                      <ListItemText
+                        primary={item.label}
+                        primaryTypographyProps={{
+                          fontSize: 14,
+                          fontWeight: 'medium',
+                        }}
+                      />
+                    )}
                   </ListItemButton>
                 ))}
             </Box>

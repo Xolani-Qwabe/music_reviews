@@ -155,9 +155,9 @@ function Reviews() {
           ))}
         </Menu>
 
-        <Divider
+        {/* <Divider
           sx={{ mt: 2, border: "1px black solid", width: "100%" }}
-        />
+        /> */}
       </div>
 
       <div className="review-container">

@@ -31,54 +31,5 @@ body{
   font-weight: 400;
   font-style: normal;
   /* overflow-y: hidden; */
-  background-color: rgb(226, 220, 215);
+  background-color: rgba(5, 30, 52, 0.944);
 }
-
-
-.button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  animation: backgroundColorChange 10s linear infinite; 
-}
-
-.button:hover {
-  background-color: #333;
-  color: #fff;
-}
-
-.button:active {
-  transform: scale(0.9);
-  color: #fff;
-}
-
-.button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #333;
-}
-
-.button--primary {
-  background-color: #333;
-  color: #52f2b5;
-}
-
-.button--secondary {
-  background-color: #fff;
-  color: #fff;
-  border: 1px solid #333;
-}
-
-.button--small {
-  padding: 0.35rem 0.5rem;
-  font-size: 0.8rem;
-}
-
-.button--large {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-}
-
-

@@ -1,0 +1,132 @@
+/* General reset */
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Drawer container */
+.drawer-list {
+  display: flex;
+  flex-direction: column;
+  width: 58px; /* Default width (icon size + padding) */
+  background-color: rgb(5, 30, 52);
+  position: fixed; /* Stay fixed on the left */
+  top: 12vh; /* Below the navigation bar */
+  left: 0;
+  padding-top: .5rem; /* Optional padding for spacing */
+  padding-bottom: 8px;
+  z-index: 1200; /* Ensure it stays above other components */
+  border-right: 2px solid rgb(157, 241, 232); /* Optional: Divider for clarity */
+  overflow: hidden; /* Prevent content overflow */
+  transition: width 0.3s ease; /* Smooth expand/collapse */
+}
+
+/* Expand the drawer when hovered (desktop and tablet) */
+.drawer-list:hover {
+  width: 14.5vw; /* Adjusted expanded width for longer text */
+}
+
+/* Drawer list item */
+.list-item {
+  width: 100%;
+}
+
+.music-box {
+  width: 14vw;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.music {
+  color: rgb(234, 157, 241);
+  font-family: "Poppins", serif;
+  display: inline;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.reviews {
+  font-weight: 100;
+  display: inline;
+  color: rgb(157, 241, 232);
+}
+
+/* List item button */
+.list-item-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background-color 0.3s ease;
+  color: rgb(157, 241, 232);
+  text-decoration: none;
+}
+
+/* Hover state for list item button */
+.list-item-button:hover {
+  background-color: rgba(157, 241, 232, 0.1);
+}
+
+/* Icon style */
+.list-item-icon {
+  color: rgb(157, 241, 232); /* Default icon color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Enlarge icon slightly on hover */
+.list-item-button:hover .list-item-icon {
+  transform: scale(1.2);
+  color: rgb(211, 214, 252);
+}
+
+/* Text style */
+.list-item-text {
+  opacity: 0;
+  max-width: 0;
+  overflow: visible;
+  white-space: nowrap; /* Ensure text stays on one line */
+  transition: opacity 0.3s ease, max-width 0.3s ease;
+  color: rgb(157, 241, 232);
+}
+
+/* Show text when drawer is expanded (desktop and tablet) */
+.drawer-list:hover .list-item-text {
+  opacity: 1;
+  max-width: 14.5vw;
+  z-index: 1200;
+}
+
+/* Link style */
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 100%;
+}
+
+/* Divider style */
+.drawer-divider {
+  border-bottom: .5vw solid rgb(157, 241, 232);
+  margin: 8px 0;
+}
+
+/* Responsive design: Hide text entirely on smaller screens */
+@media (max-width: 960px) {
+  .drawer-list {
+    width: 58px; /* Maintain compact drawer on small screens */
+  }
+
+  .drawer-list:hover {
+    width: 58px; /* Prevent expansion on hover for small screens */
+  }
+
+  .list-item-text {
+    display: none; /* Completely hide text on small screens */
+  }
+
+  .list-item-button {
+    justify-content: center; /* Center icons on small screens */
+  }
+}

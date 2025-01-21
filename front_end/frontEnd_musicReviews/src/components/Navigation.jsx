@@ -7,7 +7,8 @@ import {
   MenuItem,
   ListItemIcon,
   ListItemText,
-  Divider, InputBase
+  Divider, InputBase,
+  Button
 } from '@mui/material';
 import {
   ReviewsOutlined,
@@ -17,7 +18,7 @@ import {
   PersonAddOutlined,
   DehazeRounded,
   HelpCenterOutlined,
-  SearchRounded
+  SearchRounded,MoreHorizRounded
 } from '@mui/icons-material';
 
 import './Navigation.css';
@@ -113,12 +114,13 @@ function Navigation({ logo }) {
   }));
   return (
     <nav className="nav-container" aria-label="Main Navigation">
-      <div className="nav-content">
-      <div className="logo-container">
+      <div className="logo-container" style={{display:'flex', justifyContent:'center'}}>
         <Link to="/">
           <img className="logo" src={logo} alt="App logo" />
         </Link>
       </div>
+      <div className="nav-content">
+      
 
       <Search sx={{}}>
             <SearchIconWrapper sx={{alignSelf:'center'}}>
@@ -138,7 +140,7 @@ function Navigation({ logo }) {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <DehazeRounded sx={{color:'rgb(157, 241, 232)'}}/>
+        <MoreHorizRounded  sx={{color:'rgb(157, 241, 232)', width:'6vw',height:'6vh'}}/>
       </IconButton>
       <Menu
         id="basic-menu"
@@ -164,10 +166,10 @@ function Navigation({ logo }) {
           </React.Fragment>
         ))}
       </Menu>
-      <div><Link className='login' to={'/login'} label="Login">Login</Link></div>
+  
       </div>
-     
       </div>
+      <Button variant='outlined' color='rgb(157, 241, 232)'  sx={{borderRadius:'50px', pr:3, pl:3 , mr:2}}><Link className='login' to={'/login'} label="Login">Login</Link></Button>
         
     </nav>
   );
