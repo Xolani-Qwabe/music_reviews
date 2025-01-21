@@ -15,7 +15,7 @@ function Layout() {
     
       <main style={{ 
         top:'8vh',
-        padding: '20px',
+        padding: '24px',
         position: 'relative',
         // borderLeft: '1px solid black',
         // borderRight: '1px solid black',
@@ -23,7 +23,7 @@ function Layout() {
         margin: '0 auto',
       
         // overflow: 'none'
-        width:'60vw'
+        width:'70vw'
         }}>
         <Outlet />
       </main>

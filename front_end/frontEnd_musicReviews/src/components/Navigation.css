@@ -106,7 +106,7 @@
     width:70%;
     margin: 0 auto;
     height: 100%;
-    border-bottom: rgb(157, 241, 232) solid .5vh;
+   
   }
   
   
@@ -131,7 +131,7 @@
   
   @media screen and (max-width: 680px) {
     .nav-content {
-      width: 80%; /* Reduce width to 80% on smaller screens */
+      width: 70%; /* Reduce width to 80% on smaller screens */
     }
   
 
