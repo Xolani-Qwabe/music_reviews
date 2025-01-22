@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+  
+    position:relative;
+    height:88vh;
+    width:70vw;
+}
+
+.box1{
+    width: 50%;
+    height: 100%;
+    border-radius: 24px;
+    border:solid 1px white;
+    background-image: url('../assets/login2.jpg');
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    height: 100%; /* Full viewport height */
+    /* width: 100%;  */
+}
+.box2{
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+   
+}

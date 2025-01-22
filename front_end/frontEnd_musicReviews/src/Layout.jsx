@@ -14,14 +14,14 @@ function Layout() {
       <DrawerComponent style={{}}/>
     
       <main style={{ 
-        top:'8vh',
-        padding: '24px',
+        top:'12vh',
+        padding:'0 0',
         position: 'relative',
         // borderLeft: '1px solid black',
         // borderRight: '1px solid black',
-        minHeight: '100vh',
+        minHeight: '88vh',
         margin: '0 auto',
-      
+     
         // overflow: 'none'
         width:'70vw'
         }}>

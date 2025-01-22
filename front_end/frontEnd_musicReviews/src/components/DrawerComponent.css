@@ -24,7 +24,7 @@
 
 /* Expand the drawer when hovered (desktop and tablet) */
 .drawer-list:hover {
-  width: 14.5vw; /* Adjusted expanded width for longer text */
+  width: 15vw; /* Adjusted expanded width for longer text */
 }
 
 /* Drawer list item */
@@ -33,7 +33,7 @@
 }
 
 .music-box {
-  width: 14vw;
+  width: 15vw;
   display: flex;
   padding: 0;
   margin: 0;

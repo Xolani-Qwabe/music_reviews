@@ -16,7 +16,6 @@ import {
   InfoOutlined,
   HelpOutline,
   PersonAddOutlined,
-  DehazeRounded,
   HelpCenterOutlined,
   SearchRounded,MoreHorizRounded
 } from '@mui/icons-material';

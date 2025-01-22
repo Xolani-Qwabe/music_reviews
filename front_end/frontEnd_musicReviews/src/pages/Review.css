@@ -14,7 +14,7 @@
   top: 14vh;
   margin-bottom: 1rem;
   position: fixed;
-  width: 100%;
+  width: 20%;
   margin: 0 auto;
   z-index: 1000;
   padding: 1rem;
@@ -26,15 +26,15 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 8rem;
   border-radius: 8px;
   justify-content: center;
   margin: 0 auto;
 }
 
 .review-card {
-  width: 40vw; /* Default width for larger screens */
-  height: 40vh; /* Shorter height for all cards */
+  width: 35vw; /* Default width for larger screens */
+  height: 50vh; /* Shorter height for all cards */
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -54,12 +54,13 @@
   .reviews,
   .reviews-nav,
   .review-container {
-    width: 55vw; /* Adjust container width for mobile */
+    width: 60vw; /* Adjust container width for mobile */
+    margin: 0 auto;
   }
 
   .review-card {
     width: 70vw !important; /* Full width on small screens */
-    height: 40vh !important; /* Adjust height for mobile */
+    height: 35vh !important; /* Adjust height for mobile */
   }
 
   .card-content-1 p,

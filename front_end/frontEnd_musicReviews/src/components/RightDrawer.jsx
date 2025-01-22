@@ -8,13 +8,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import ArrowRight from '@mui/icons-material/ArrowRight';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import AccountCircleRounded from '@mui/icons-material/AccountCircleRounded';
 import { MessageRounded, FactCheckRounded, StorageRounded, CardMembershipRounded } from '@mui/icons-material';
 import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 const data = [
   { icon: <FactCheckRounded />, label: 'Verification' },
@@ -72,21 +70,37 @@ export default function RightDrawer() {
         })}
       >
         <Paper elevation={0} sx={{ maxWidth: 256, width: '100%' }}>
-          <FireNav component="nav" disablePadding>
-            <ListItemButton component="a" href="#customized-list">
-              <ListItemIcon sx={{ fontSize: 20 }}></ListItemIcon>
+          <FireNav component="nav">
+            <Box component="a" href="#customized-list" p={2} sx={{ fontSize:'12px', fontWeight:700}}>
+              
               {!isMobile && (
-                <ListItemText
-                  sx={{ my: 0, color: 'rgb(157, 241, 232)' }}
-                  primary="Wallet"
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 'medium',
-                    letterSpacing: 0,
-                  }}
-                />
+             <button
+             size="small"
+             variant="outlined"
+             style={{
+               border: 'solid 1px rgb(157, 241, 232)',
+               borderRadius: '50px',
+               backgroundColor: 'transparent',
+               color: 'rgb(157, 241, 232)',
+        
+               padding: '0.8em 1.2em',
+               cursor: 'pointer',
+               height: '80%',
+               transition: 'all 0.3s ease',
+             }}
+             onMouseEnter={(e) => {
+               e.target.style.backgroundColor = 'rgb(157, 241, 232)';
+               e.target.style.color = 'rgb(5, 30, 52)';
+             }}
+             onMouseLeave={(e) => {
+               e.target.style.backgroundColor = 'transparent';
+               e.target.style.color = 'rgb(157, 241, 232)';
+             }}
+           >
+             Connect Wallet
+           </button>
               )}
-            </ListItemButton>
+            </Box>
             <Divider />
             <ListItem component="div" disablePadding>
               <ListItemButton sx={{ height: 56 }}>
@@ -117,7 +131,7 @@ export default function RightDrawer() {
                 }}
               >
                 <ListItemText
-                  primary={!isMobile && 'User Wallet'}
+                  primary={!isMobile && 'App Wallet'}
                   sx={{
                     fontSize: 15,
                     fontWeight: 'medium',
@@ -125,21 +139,11 @@ export default function RightDrawer() {
                     mb: '2px',
                     color: 'rgb(157, 241, 232)',
                   }}
-                  secondary={
-                    !isMobile &&
-                    'Verification, Credentials, Messages, Storage'
-                  }
-                  secondaryTypographyProps={{
-                    noWrap: true,
-                    fontSize: 12,
-                    lineHeight: '16px',
-                    color: open ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,0.5)',
-                  }}
                 />
                 <KeyboardArrowDown
                   sx={{
                     mr: 1,
-                    opacity: !isMobile && open ? 1 : 0,
+                    opacity: !isMobile && open ? 1 : 1,
                     transition: '0.2s',
                     transform: open ? 'rotate(-180deg)' : 'rotate(0)',
                   }}
@@ -157,7 +161,7 @@ export default function RightDrawer() {
                     {!isMobile && (
                       <ListItemText
                         primary={item.label}
-                        primaryTypographyProps={{
+                        sx={{
                           fontSize: 14,
                           fontWeight: 'medium',
                         }}

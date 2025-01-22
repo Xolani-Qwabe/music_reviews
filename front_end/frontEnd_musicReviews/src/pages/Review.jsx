@@ -10,8 +10,8 @@ function Review({ reviewData }) {
   return (
     <Box className='review-card'
       sx={{
-        width: "30vw",
-        height: "70vh",
+        width: "35vw",
+        height: "60vh",
         backgroundImage: `url(${reviewData.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -44,7 +44,7 @@ function Review({ reviewData }) {
         className="card-bottom"
         sx={{
           width: "100%",
-          height: "55%",
+          height: "60%",
 
           background: "rgba(0, 0, 0, 0.4)", // Neutral semi-transparent black
           backdropFilter: "blur(20px)", // Glassmorphism blur effect
