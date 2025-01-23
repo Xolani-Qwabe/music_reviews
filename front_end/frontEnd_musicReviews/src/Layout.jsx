@@ -1,33 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import logo from './assets/logoNoText.png';
-
 
 import DrawerComponent from './components/DrawerComponent';
 import RightDrawer from './components/RightDrawer';
 
 function Layout() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Temporary login state
+
   return (
-    <div >
+    <div>
       <Navigation logo={logo} />
-      <DrawerComponent style={{}}/>
-    
-      <main style={{ 
-        top:'12vh',
-        padding:'0 0',
-        position: 'relative',
-        // borderLeft: '1px solid black',
-        // borderRight: '1px solid black',
-        minHeight: '88vh',
-        margin: '0 auto',
-     
-        // overflow: 'none'
-        width:'70vw'
-        }}>
+      {isLoggedIn && <DrawerComponent />} {/* Show left drawer only if logged in */}
+      <main
+        style={{
+          top: '12vh',
+          padding: '0 0',
+          position: 'relative',
+          minHeight: '88vh',
+          margin: '0 auto',
+          width: isLoggedIn ? '70vw' : '100vw', // Full width if not logged in
+        }}
+      >
         <Outlet />
       </main>
-      <RightDrawer/>
+      {isLoggedIn && <RightDrawer />} {/* Show right drawer only if logged in */}
     </div>
   );
 }

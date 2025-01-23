@@ -6,8 +6,8 @@
   gap: 1rem;
   margin: 0 auto;
   width: 70vw;
-  padding: 1rem;
-  border-top: rgb(157, 241, 232) solid .5vh;
+  padding: .3rem;
+  border-top: rgb(157, 241, 232) solid 0.5vh;
 }
 
 .reviews-nav {
@@ -21,15 +21,17 @@
 }
 
 .review-container {
-  top: 12vh;
+
   width: 100%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 8rem;
+ 
   border-radius: 8px;
   justify-content: center;
   margin: 0 auto;
+  padding: 10rem;
+  gap:8em;
 }
 
 .review-card {
@@ -49,6 +51,63 @@
   transform: scale(1.02);
 }
 
+.card-content-3 {
+  display: flex;
+  width: 100%;
+  gap: .2rem;
+  font-size: large;
+  font-weight: 400;
+  padding: .2em;
+}
+
+.fa-icon {
+  width: 3vw;
+  height: 3vh;
+  color: rgb(157, 241, 232);
+}
+
+.stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid; */
+  width: 15%;
+}
+
+/* Responsive styles for medium screens */
+@media (max-width: 1024px) {
+  .review-card {
+    width: 50vw; /* Adjust width for tablets and medium screens */
+    height: 45vh; /* Adjust height proportionally */
+  }
+
+  .card-content-1 p,
+  .card-content-2 .artist {
+    font-size: 1rem;
+  }
+
+  .fa-icon {
+    width: 5vw; /* Scale icons slightly */
+    height: 5vh;
+  }
+}
+
+.card-content-3 {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  width: 100%;
+  height: 33.3%;
+  gap: 1rem; /* Adjust gap to avoid overflow */
+  font-size:.8rem;
+  font-weight: 400;
+  padding: 1rem; /* Reduce padding slightly */
+  justify-content: space-around; /* Distribute content evenly */
+  align-items: center;
+  /* border: solid; */
+  margin: 0 auto;
+}
+
+
 /* Responsive styles for small screens */
 @media (max-width: 600px) {
   .reviews,
@@ -56,6 +115,12 @@
   .review-container {
     width: 60vw; /* Adjust container width for mobile */
     margin: 0 auto;
+   
+  }
+
+  .review-container{
+    padding: 0;
+    top: 14vh;
   }
 
   .review-card {
@@ -77,4 +142,48 @@
   .card-content-2 {
     padding: 0.8rem !important; /* Reduce padding */
   }
+
+  /* Responsive styles for medium screens */
+@media (max-width: 1024px) {
+  .card-content-3 {
+    gap: 1rem; /* Smaller gap for medium screens */
+    font-size: 1rem; /* Reduce font size */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .stat {
+    flex: 1 1 45%; /* Allow stats to take up half the width if needed */
+    text-align: center; /* Center-align content */
+  }
+
+  .fa-icon {
+    width: 4.5vw; /* Adjust icon size for medium screens */
+    height: 4.5vh;
+  }
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .card-content-3 {
+    gap: 0.5rem; /* Further reduce gap */
+    padding: 0.8rem; /* Smaller padding for mobile screens */
+    font-size: 0.9rem; /* Smaller font size for text */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .stat {
+    flex: 1 1 100%; /* Allow stats to take full width */
+    display: flex;
+    gap: 0.5rem; /* Reduce gap between icon and text */
+    align-items: center;
+  }
+
+  .fa-icon {
+    width: 3vw; /* Scale icon size for mobile screens */
+    height: 3vh;
+  }
+}
+
+
 }

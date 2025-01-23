@@ -18,6 +18,7 @@ import image17 from '../assets/music/image17.jpg'
 import image18 from '../assets/music/image18.jpg'
 import image19 from '../assets/music/eric.jpg'
 import image20 from '../assets/music/clay-banks.jpg'
+import snipet from '../assets/music/lazy-day.mp3'
 
 
 export const reviewData = [
@@ -38,7 +39,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 80000, suggestedPromoStrategy: "Target fans of conscious Hip-Hop and collaborate with influencers and bloggers in the genre.", estimatedBudget: 40000 },
       nftData: { suggestedNfts: 500, nftPrice: 0.10, zarPrice: 50.00 },
-      songSnippet: "https://example.com/ugogo-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -61,7 +62,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 60000, suggestedPromoStrategy: "Target fans of indie-rock and collaborate with influencers and bloggers in the genre.", estimatedBudget: 30000 },
       nftData: { suggestedNfts: 200, nftPrice: 0.20, zarPrice: 100.00 },
-      songSnippet: "https://example.com/pretoria-girls-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -84,7 +85,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 120000, suggestedPromoStrategy: "Target fans of Afro-Pop and R&B, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 60000 },
       nftData: { suggestedNfts: 300, nftPrice: 0.15, zarPrice: 75.00 },
-      songSnippet: "https://example.com/akulaleki-snippet.mp3",
+      songSnippet:snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -107,7 +108,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 90000, suggestedPromoStrategy: "Target fans of electronic and Afro-Pop music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 45000 },
       nftData: { suggestedNfts: 250, nftPrice: 0.20, zarPrice: 100.00 },
-      songSnippet: "https://example.com/to-the-moon-snippet.mp3",
+      songSnippet:snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -130,7 +131,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 100000, suggestedPromoStrategy: "Target fans of R&B and Afro-Pop music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 50000 },
       nftData: { suggestedNfts: 200, nftPrice: 0.25, zarPrice: 125.00 },
-      songSnippet: "https://example.com/uyathandwa-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -153,7 +154,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 80000, suggestedPromoStrategy: "Target fans of Hip-Hop and collaborate with influencers and bloggers in the genre.", estimatedBudget: 40000 },
       nftData: { suggestedNfts: 300, nftPrice: 0.15, zarPrice: 75.00 },
-      songSnippet: "https://example.com/mabena-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -176,7 +177,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 120000, suggestedPromoStrategy: "Target fans of Hip-Hop and collaborate with influencers and bloggers in the genre.", estimatedBudget: 60000 },
       nftData: { suggestedNfts: 400, nftPrice: 0.10, zarPrice: 50.00 },
-      songSnippet: "https://example.com/juice-back-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -199,7 +200,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 90000, suggestedPromoStrategy: "Target fans of Afro-Pop and R&B music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 45000 },
       nftData: { suggestedNfts: 250, nftPrice: 0.20, zarPrice: 100.00 },
-      songSnippet: "https://example.com/collide-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -222,7 +223,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 100000, suggestedPromoStrategy: "Target fans of electronic and Afro-Pop music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 50000 },
       nftData: { suggestedNfts: 300, nftPrice: 0.15, zarPrice: 75.00 },
-      songSnippet: "https://example.com/the-journey-snippet.mp3",
+      songSnippet:snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -244,7 +245,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 80000, suggestedPromoStrategy: "Target fans of House music and collaborate with influencers and bloggers in the genre.", estimatedBudget: 40000 },
       nftData: { suggestedNfts: 250, nftPrice: 0.20, zarPrice: 100.00 },
-      songSnippet: "https://example.com/gugulethu-snippet.mp3",
+      songSnippet:snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -266,7 +267,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 100000, suggestedPromoStrategy: "Target fans of Hip-Hop and Afro-Pop music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 50000 },
       nftData: { suggestedNfts: 300, nftPrice: 0.15, zarPrice: 75.00 },
-      songSnippet: "https://example.com/john-cena-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -289,7 +290,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 70000, suggestedPromoStrategy: "Target fans of Afro-Pop music and collaborate with influencers and bloggers in the genre.", estimatedBudget: 35000 },
       nftData: { suggestedNfts: 200, nftPrice: 0.25, zarPrice: 125.00 },
-      songSnippet: "https://example.com/kwela-kwela-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -312,7 +313,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 90000, suggestedPromoStrategy: "Target fans of Afro-Pop and R&B music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 45000 },
       nftData: { suggestedNfts: 250, nftPrice: 0.20, zarPrice: 100.00 },
-      songSnippet: "https://example.com/ngiyesaba-snippet.mp3",
+      songSnippet: snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -335,7 +336,7 @@ export const reviewData = [
       },
       revenuePotential: { estimatedRevenue: 80000, suggestedPromoStrategy: "Target fans of Afro-Pop and R&B music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 40000 },
       nftData: { suggestedNfts: 200, nftPrice: 0.25, zarPrice: 125.00 },
-      songSnippet: "https://example.com/ubuhle-bakho-snippet.mp3",
+      songSnippet:snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
@@ -352,13 +353,13 @@ export const reviewData = [
       genre: "Amapiano",
       image: image20,
       streamingStats: {
-        platformEngagement: { Spotify: 100000, AppleMusic: 50000, YouTubeMusic: 200000 },
+        platformEngagement: { Spotify: 103021, AppleMusic: 51902, YouTubeMusic: 230011 },
         artistStreamingStats: { monthlyListeners: 500000, totalStreams: 25000000 },
         songStreamingStats: { streams: 400000, downloads: 20000 },
       },
       revenuePotential: { estimatedRevenue: 100000, suggestedPromoStrategy: "Target fans of Amapiano and Afro-Pop music, and collaborate with influencers and bloggers in the genre.", estimatedBudget: 50000 },
       nftData: { suggestedNfts: 300, nftPrice: 0.15, zarPrice: 75.00 },
-      songSnippet: "https://example.com/shesha-snippet.mp3",
+      songSnippet:snipet,
       shareMenu: [
         { icon: "facebook", label: "Share on Facebook" },
         { icon: "twitter", label: "Share on Twitter" },
