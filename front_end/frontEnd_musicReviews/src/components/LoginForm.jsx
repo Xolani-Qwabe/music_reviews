@@ -1,36 +1,36 @@
 import React, { useState } from "react";
-import {
-  Box,
-  TextField,
-  Typography,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-} from "@mui/material";
+import { Box, TextField, Typography, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { faGoogle, faFacebook, faApple, faTiktok, faTwitter, faSpotify } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { z } from "zod";
+import { registerUser, loginUser } from "../api"; // API functions
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 // Validation schema using Zod
-const loginSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
-});
+const loginSchema = z
+  .object({
+    email: z.string().email({ message: "Invalid email address" }),
+    password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
+    confirmPassword: z.string().optional(),
+  })
+  .refine((data) => !data.confirmPassword || data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false); // Determines Login or Sign Up mode
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validate form data
-    const result = loginSchema.safeParse({ email, password });
+    const result = loginSchema.safeParse({ email, password, confirmPassword: isSignUp ? confirmPassword : undefined });
     if (!result.success) {
       const fieldErrors = result.error.flatten().fieldErrors;
       setErrors(fieldErrors);
@@ -38,7 +38,23 @@ function LoginForm() {
     }
 
     setErrors({});
-    console.log({ email, password });
+
+    // Log the data being sent
+    console.log("Form data sent:", { email, password, confirmPassword });
+
+    try {
+      if (isSignUp) {
+        const response = await registerUser(email, password);
+        console.log("Sign Up Successful:", response);
+      } else {
+        const response = await loginUser(email, password);
+        console.log("Login Successful:", response);
+        navigate('/'); // Navigate to home after successful login
+      }
+    } catch (error) {
+      console.error(error);
+      setErrors({ api: error });
+    }
   };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -70,7 +86,7 @@ function LoginForm() {
           color: "rgb(157, 241, 232)",
         }}
       >
-        Login
+        {isSignUp ? "Sign Up" : "Login"}
       </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
@@ -131,13 +147,47 @@ function LoginForm() {
             {errors.password?.[0]}
           </Typography>
         </FormControl>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            mt: 2,
-          }}
-        >
+        {isSignUp && (
+          <FormControl
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            error={!!errors.confirmPassword}
+            sx={{
+              "& .MuiInputLabel-root": { color: "rgb(157, 241, 232)" },
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "50px",
+                color: "rgb(157, 241, 232)",
+                "& fieldset": { borderColor: "rgb(157, 241, 232)" },
+                "&:hover fieldset": { borderColor: "rgb(220, 241, 232)" },
+              },
+            }}
+          >
+            <InputLabel>Confirm Password</InputLabel>
+            <OutlinedInput
+              type={showPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                    sx={{ color: "rgb(157, 241, 232)" }}
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Confirm Password"
+            />
+            <Typography variant="caption" color="error">
+              {errors.confirmPassword?.[0]}
+            </Typography>
+          </FormControl>
+        )}
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
           <button
             type="submit"
             style={{
@@ -157,10 +207,16 @@ function LoginForm() {
               (e.target.style.backgroundColor = "rgb(0, 128, 128)")
             }
           >
-            Login
+            {isSignUp ? "Sign Up" : "Login"}
           </button>
         </Box>
       </form>
+      {errors.api && (
+        <Typography color="error" sx={{ mt: 2, textAlign: "center" }}>
+          {typeof errors.api === "string" ? errors.api : JSON.stringify(errors.api)}
+        </Typography>
+      )}
+
       <Typography
         variant="body1"
         sx={{
@@ -168,25 +224,12 @@ function LoginForm() {
           mt: 3,
           color: "rgb(157, 241, 232)",
           fontWeight: "bold",
+          cursor: "pointer",
         }}
+        onClick={() => setIsSignUp((prev) => !prev)}
       >
-        Or Login With
+        {isSignUp ? "Already have an account? Login" : "Don't have an account? Sign Up"}
       </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 2,
-          mt: 2,
-        }}
-      >
-        <FontAwesomeIcon icon={faGoogle} style={{ fontSize: 30, color: "rgb(157, 241, 232)" }} />
-        <FontAwesomeIcon icon={faFacebook} style={{ fontSize: 30, color: "rgb(157, 241, 232)" }} />
-        <FontAwesomeIcon icon={faApple} style={{ fontSize: 30, color: "rgb(157, 241, 232)" }} />
-        <FontAwesomeIcon icon={faTiktok} style={{ fontSize: 30, color: "rgb(157, 241, 232)" }} />
-        <FontAwesomeIcon icon={faTwitter} style={{ fontSize: 30, color: "rgb(157, 241, 232)" }} />
-        <FontAwesomeIcon icon={faSpotify} style={{ fontSize: 30, color: "rgb(157, 241, 232)" }} />
-      </Box>
     </Box>
   );
 }
