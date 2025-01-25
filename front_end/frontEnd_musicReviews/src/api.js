@@ -34,4 +34,15 @@ export const loginUser = async (email, password) => {
       throw error.response?.data || "Login failed"; // Error handling
     }
   };
+
+// Logout user
+export const logoutUser = async () => {
+    try {
+      const response = await apiClient.post("/logout", {}, { withCredentials: true });
+      return response.data; // Success response
+    } catch (error) {
+      throw error.response?.data || "Logout failed"; // Error handling
+    }
+  };
+  
   

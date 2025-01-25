@@ -1,0 +1,125 @@
+:root {
+    --primary-color: rgb(71, 249, 249); /* Primary custom color */
+    --secondary-color: rgb(5, 30, 52);  /* Background custom color */
+    --hover-color: rgb(0, 102, 102);    /* Hover color for buttons */
+    --text-color: rgb(157, 241, 232);   /* Text and border color */
+    --error-color: rgb(255, 69, 58);    /* Error color */
+  }
+
+  /* Autofill styles */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(5, 30, 52, 0.944) inset;
+    -webkit-text-fill-color: rgb(157, 241, 232);
+    border-radius: 50px;
+  }
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(5, 30, 52, 0.944) inset;
+    -webkit-text-fill-color: rgb(157, 241, 232);
+    border-radius: 50px;
+  }
+  
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .login-container:hover {
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.25);
+  }
+  
+  .login-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .input-field {
+    border-radius: 8px;
+  }
+  
+  .input-field .MuiInputLabel-root {
+    color: var(--text-color);
+    font-size: 0.9rem;
+  }
+  
+  .input-field .MuiOutlinedInput-root {
+    border-radius: 8px;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-field .MuiOutlinedInput-root fieldset {
+    border-color: var(--text-color);
+  }
+  
+  .input-field .MuiOutlinedInput-root:hover fieldset {
+    border-color: var(--primary-color);
+  }
+  
+  .input-field .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: var(--hover-color);
+    box-shadow: 0px 0px 4px var(--primary-color);
+  }
+  
+  .icon-button {
+    color: var(--text-color);
+    padding: 0.5rem;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .submit-button {
+    width: 50%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .api-error {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--error-color);
+    font-size: 0.9rem;
+  }
+  
+  .toggle-mode {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-mode:hover {
+    color: var(--primary-color);
+  }
+  
