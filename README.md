@@ -1,7 +1,5 @@
 # music_reviews
-South African Music Reviews Website
-Here's a sample README and User Flow for your decentralized music label project:
-README
+:
 Decentralized Music Label
 Empowering artists and engaging fans through blockchain-based music ownership and promotion.
 Table of Contents
